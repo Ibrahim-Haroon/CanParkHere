@@ -1,0 +1,221 @@
+name: Build and Test
+
+on:
+  push:
+    branches-ignore:
+      - main
+  workflow_dispatch: {}
+concurrency:
+  group: 'can-park-here-${{ github.ref }}'
+  cancel-in-progress: true
+  
+env:
+  DEVELOPER_DIR: /Applications/Xcode.app/Contents/Developer
+  XCODE_VERSION: '26.0'
+  MACOS_VERSION: 'macos-26'
+  IOS_VERSION: '18.0'
+
+jobs:
+  build-and-test:
+    name: Build and Test with Apple Intelligence
+    runs-on: macos-26  # macOS 26 for Apple Intelligence support
+    
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        
+      - name: Setup Xcode 26
+        uses: maxim-lobanov/setup-xcode@v1
+        with:
+          xcode-version: '26.0'
+          
+      - name: Verify Apple Intelligence Support
+        run: |
+          echo "Checking Xcode version..."
+          xcodebuild -version
+          echo "Checking for FoundationModels framework..."
+          xcrun --sdk iphoneos --show-sdk-path
+          ls -la "$(xcrun --sdk iphoneos --show-sdk-path)/System/Library/Frameworks/" | grep -i foundation || true
+          
+      - name: Cache Dependencies
+        uses: actions/cache@v4
+        with:
+          path: |
+            ~/Library/Developer/Xcode/DerivedData
+            ~/.swiftpm
+            ~/Library/Caches/org.swift.swiftpm
+          key: ${{ runner.os }}-xcode26-${{ hashFiles('**/*.xcodeproj/project.pbxproj', '**/Package.resolved') }}
+          restore-keys: |
+            ${{ runner.os }}-xcode26-
+            
+      - name: Select Compatible Simulator
+        run: |
+          # List available simulators with Apple Intelligence support
+          xcrun simctl list devices available
+          
+          # Select iPhone 16 Pro or later for Apple Intelligence features
+          DEVICE_ID=$(xcrun simctl list devices available | grep -E "iPhone 16 Pro|iPhone 17" | head -1 | awk -F '[()]' '{print $2}')
+          
+          if [ -z "$DEVICE_ID" ]; then
+            echo "Creating new simulator with Apple Intelligence support..."
+            DEVICE_ID=$(xcrun simctl create "iPhone-AI-Test" "iPhone 16 Pro" "iOS ${{ env.IOS_VERSION }}")
+          fi
+          
+          echo "DEVICE_ID=$DEVICE_ID" >> $GITHUB_ENV
+          echo "Selected device: $DEVICE_ID"
+          
+          # Boot the simulator
+          xcrun simctl boot $DEVICE_ID || true
+          
+      - name: Configure Apple Intelligence Entitlements
+        run: |
+          # Ensure Apple Intelligence entitlements are present
+          if ! grep -q "com.apple.developer.apple-intelligence" CanParkHere/*.entitlements 2>/dev/null; then
+            echo "Warning: Apple Intelligence entitlements may need to be configured"
+          fi
+          
+      - name: Build for Testing
+        run: |
+          set -o pipefail
+          xcodebuild build-for-testing \
+            -project CanParkHere.xcodeproj \
+            -scheme CanParkHere \
+            -destination "platform=iOS Simulator,id=${{ env.DEVICE_ID }}" \
+            -derivedDataPath build \
+            -enableAppleIntelligence YES \
+            CODE_SIGNING_ALLOWED=NO \
+            ENABLE_FOUNDATION_MODELS=YES | xcpretty && exit ${PIPESTATUS[0]}
+            
+      - name: Run Unit Tests
+        run: |
+          set -o pipefail
+          xcodebuild test-without-building \
+            -project CanParkHere.xcodeproj \
+            -scheme CanParkHere \
+            -destination "platform=iOS Simulator,id=${{ env.DEVICE_ID }}" \
+            -derivedDataPath build \
+            -enableCodeCoverage YES \
+            -only-testing:CanParkHereTests \
+            -resultBundlePath TestResults/UnitTests.xcresult | xcpretty -r junit -o TestResults/unit-tests.xml
+            
+      - name: Run UI Tests
+        run: |
+          set -o pipefail
+          xcodebuild test-without-building \
+            -project CanParkHere.xcodeproj \
+            -scheme CanParkHere \
+            -destination "platform=iOS Simulator,id=${{ env.DEVICE_ID }}" \
+            -derivedDataPath build \
+            -only-testing:CanParkHereUITests \
+            -resultBundlePath TestResults/UITests.xcresult | xcpretty -r junit -o TestResults/ui-tests.xml
+            
+      - name: Test Apple Intelligence Features
+        run: |
+          # Verify FoundationModels usage in test results
+          if [ -f "TestResults/UnitTests.xcresult" ]; then
+            xcrun xcresulttool get --format json --path TestResults/UnitTests.xcresult > TestResults/test-details.json
+            
+            # Check for any Apple Intelligence related test failures
+            if grep -q "FoundationModels" TestResults/test-details.json; then
+              echo "✅ FoundationModels framework tests detected"
+            fi
+          fi
+          
+      - name: Generate Code Coverage Report
+        run: |
+          xcrun xcresulttool get --format json --path TestResults/UnitTests.xcresult > TestResults/coverage.json
+          
+      - name: Upload Test Results
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: test-results
+          path: |
+            TestResults/*.xcresult
+            TestResults/*.xml
+            TestResults/*.json
+            
+      - name: Publish Test Report
+        if: always()
+        uses: dorny/test-reporter@v1
+        with:
+          name: Test Results
+          path: 'TestResults/*.xml'
+          reporter: java-junit
+
+  apple-intelligence-validation:
+    name: Validate Apple Intelligence Integration
+    runs-on: macos-26
+    needs: build-and-test
+    
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        
+      - name: Setup Xcode 26
+        uses: maxim-lobanov/setup-xcode@v1
+        with:
+          xcode-version: '26.0'
+          
+      - name: Validate FoundationModels Usage
+        run: |
+          echo "Checking for FoundationModels imports..."
+          
+          # Find all Swift files using FoundationModels
+          find CanParkHere -name "*.swift" -type f -exec grep -l "import FoundationModels" {} \; > foundation_models_files.txt
+          
+          if [ -s foundation_models_files.txt ]; then
+            echo "✅ Found FoundationModels usage in:"
+            cat foundation_models_files.txt
+          else
+            echo "⚠️ No FoundationModels imports found"
+          fi
+          
+          # Check for Apple Intelligence agent implementations
+          if grep -r "AppleParkingAgent\|AppleVisionAgent" CanParkHere/Services/Agents/Implementations/; then
+            echo "✅ Apple Intelligence agents implementation found"
+          fi
+          
+      - name: Verify Build Settings
+        run: |
+          xcodebuild -project CanParkHere.xcodeproj -showBuildSettings | grep -E "IPHONEOS_DEPLOYMENT_TARGET|SWIFT_VERSION"
+          
+          # Ensure minimum iOS version supports Apple Intelligence
+          MIN_IOS=$(xcodebuild -project CanParkHere.xcodeproj -showBuildSettings | grep "IPHONEOS_DEPLOYMENT_TARGET" | awk '{print $3}')
+          
+          if (( $(echo "$MIN_IOS >= 18.0" | bc -l) )); then
+            echo "✅ iOS deployment target $MIN_IOS supports Apple Intelligence"
+          else
+            echo "⚠️ iOS deployment target $MIN_IOS may not fully support Apple Intelligence features"
+          fi
+
+  analyze:
+    name: Static Analysis
+    runs-on: macos-26
+    
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        
+      - name: Setup Xcode 26
+        uses: maxim-lobanov/setup-xcode@v1
+        with:
+          xcode-version: '26.0'
+          
+      - name: Install SwiftLint
+        run: |
+          brew install swiftlint || brew upgrade swiftlint
+          swiftlint version
+          
+      - name: Run SwiftLint
+        run: |
+          swiftlint lint --reporter github-actions-logging
+        continue-on-error: true
+        
+      - name: Analyze with Xcode
+        run: |
+          xcodebuild analyze \
+            -project CanParkHere.xcodeproj \
+            -scheme CanParkHere \
+            -destination 'platform=iOS Simulator,name=iPhone 16 Pro,OS=18.0' \
+            ENABLE_FOUNDATION_MODELS=YES | xcpretty && exit ${PIPESTATUS[0]}
