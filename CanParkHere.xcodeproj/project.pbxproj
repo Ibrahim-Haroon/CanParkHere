@@ -1,0 +1,775 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		FA415A852E5BA55800DC50A1 /* CanParkHereApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA415A842E5BA55800DC50A1 /* CanParkHereApp.swift */; };
+		FA415A892E5BA55B00DC50A1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FA415A882E5BA55B00DC50A1 /* Assets.xcassets */; };
+		FA415A8C2E5BA55B00DC50A1 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FA415A8B2E5BA55B00DC50A1 /* Preview Assets.xcassets */; };
+		FA415A962E5BA55B00DC50A1 /* CanParkHereTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA415A952E5BA55B00DC50A1 /* CanParkHereTests.swift */; };
+		FA415AA02E5BA55B00DC50A1 /* CanParkHereUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA415A9F2E5BA55B00DC50A1 /* CanParkHereUITests.swift */; };
+		FA415AA22E5BA55B00DC50A1 /* CanParkHereUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA415AA12E5BA55B00DC50A1 /* CanParkHereUITestsLaunchTests.swift */; };
+		FAE899D12E5BA7C8000025EC /* ParkingDecision.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE899D02E5BA7C8000025EC /* ParkingDecision.swift */; };
+		FAE899D52E5BA808000025EC /* UserPreferences.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE899D42E5BA808000025EC /* UserPreferences.swift */; };
+		FAE899E32E5BA8EA000025EC /* CameraViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE899E22E5BA8EA000025EC /* CameraViewModel.swift */; };
+		FAE899EA2E5BA942000025EC /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE899E92E5BA942000025EC /* ContentView.swift */; };
+		FAE899ED2E5BA96E000025EC /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE899EC2E5BA96E000025EC /* OnboardingView.swift */; };
+		FAE899F02E5BA990000025EC /* MainCameraView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE899EF2E5BA990000025EC /* MainCameraView.swift */; };
+		FAE899F32E5BA9B8000025EC /* ParkingResultView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE899F22E5BA9B8000025EC /* ParkingResultView.swift */; };
+		FAE899F62E5BA9D2000025EC /* HistoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE899F52E5BA9D2000025EC /* HistoryView.swift */; };
+		FAE899F92E5BAA12000025EC /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE899F82E5BAA12000025EC /* SettingsView.swift */; };
+		FAE899FC2E5BAA87000025EC /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE899FB2E5BAA87000025EC /* ImagePicker.swift */; };
+		FAE899FE2E5BAA98000025EC /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE899FD2E5BAA98000025EC /* LocationManager.swift */; };
+		FAE89A002E5BAAA8000025EC /* HolidayChecker.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE899FF2E5BAAA8000025EC /* HolidayChecker.swift */; };
+		FAE89A0C2E5BB9C9000025EC /* Agent.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE89A0B2E5BB9C9000025EC /* Agent.swift */; };
+		FAE89A0E2E5BB9D4000025EC /* ParkingAgent.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE89A0D2E5BB9D4000025EC /* ParkingAgent.swift */; };
+		FAE89A102E5BB9DC000025EC /* VisionAgent.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE89A0F2E5BB9DC000025EC /* VisionAgent.swift */; };
+		FAE89A122E5BB9E5000025EC /* AppleParkingAgent.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE89A112E5BB9E5000025EC /* AppleParkingAgent.swift */; };
+		FAE89A142E5BB9EE000025EC /* AppleVisionAgent.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE89A132E5BB9EE000025EC /* AppleVisionAgent.swift */; };
+		FAE89A162E5BBAC2000025EC /* ParkingAgentInstructions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE89A152E5BBAC2000025EC /* ParkingAgentInstructions.swift */; };
+		FAE89A182E5BBACC000025EC /* VisionAgentInstructions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE89A172E5BBACC000025EC /* VisionAgentInstructions.swift */; };
+		FAE89A1A2E5BC2BC000025EC /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = FAE89A192E5BC2BC000025EC /* README.md */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		FA415A922E5BA55B00DC50A1 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FA415A792E5BA55800DC50A1 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = FA415A802E5BA55800DC50A1;
+			remoteInfo = CanParkHere;
+		};
+		FA415A9C2E5BA55B00DC50A1 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FA415A792E5BA55800DC50A1 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = FA415A802E5BA55800DC50A1;
+			remoteInfo = CanParkHere;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		FA415A812E5BA55800DC50A1 /* CanParkHere.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CanParkHere.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		FA415A842E5BA55800DC50A1 /* CanParkHereApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CanParkHereApp.swift; sourceTree = "<group>"; };
+		FA415A882E5BA55B00DC50A1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		FA415A8B2E5BA55B00DC50A1 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		FA415A912E5BA55B00DC50A1 /* CanParkHereTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CanParkHereTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		FA415A952E5BA55B00DC50A1 /* CanParkHereTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CanParkHereTests.swift; sourceTree = "<group>"; };
+		FA415A9B2E5BA55B00DC50A1 /* CanParkHereUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CanParkHereUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		FA415A9F2E5BA55B00DC50A1 /* CanParkHereUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CanParkHereUITests.swift; sourceTree = "<group>"; };
+		FA415AA12E5BA55B00DC50A1 /* CanParkHereUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CanParkHereUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		FAE899D02E5BA7C8000025EC /* ParkingDecision.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParkingDecision.swift; sourceTree = "<group>"; };
+		FAE899D42E5BA808000025EC /* UserPreferences.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserPreferences.swift; sourceTree = "<group>"; };
+		FAE899E22E5BA8EA000025EC /* CameraViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraViewModel.swift; sourceTree = "<group>"; };
+		FAE899E92E5BA942000025EC /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		FAE899EC2E5BA96E000025EC /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
+		FAE899EF2E5BA990000025EC /* MainCameraView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCameraView.swift; sourceTree = "<group>"; };
+		FAE899F22E5BA9B8000025EC /* ParkingResultView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParkingResultView.swift; sourceTree = "<group>"; };
+		FAE899F52E5BA9D2000025EC /* HistoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryView.swift; sourceTree = "<group>"; };
+		FAE899F82E5BAA12000025EC /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		FAE899FB2E5BAA87000025EC /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
+		FAE899FD2E5BAA98000025EC /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
+		FAE899FF2E5BAAA8000025EC /* HolidayChecker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HolidayChecker.swift; sourceTree = "<group>"; };
+		FAE89A0B2E5BB9C9000025EC /* Agent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Agent.swift; sourceTree = "<group>"; };
+		FAE89A0D2E5BB9D4000025EC /* ParkingAgent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParkingAgent.swift; sourceTree = "<group>"; };
+		FAE89A0F2E5BB9DC000025EC /* VisionAgent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisionAgent.swift; sourceTree = "<group>"; };
+		FAE89A112E5BB9E5000025EC /* AppleParkingAgent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppleParkingAgent.swift; sourceTree = "<group>"; };
+		FAE89A132E5BB9EE000025EC /* AppleVisionAgent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppleVisionAgent.swift; sourceTree = "<group>"; };
+		FAE89A152E5BBAC2000025EC /* ParkingAgentInstructions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParkingAgentInstructions.swift; sourceTree = "<group>"; };
+		FAE89A172E5BBACC000025EC /* VisionAgentInstructions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisionAgentInstructions.swift; sourceTree = "<group>"; };
+		FAE89A192E5BC2BC000025EC /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = SOURCE_ROOT; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		FA415A7E2E5BA55800DC50A1 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FA415A8E2E5BA55B00DC50A1 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FA415A982E5BA55B00DC50A1 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		FA415A782E5BA55800DC50A1 = {
+			isa = PBXGroup;
+			children = (
+				FAE89A192E5BC2BC000025EC /* README.md */,
+				FA415A832E5BA55800DC50A1 /* CanParkHere */,
+				FA415A942E5BA55B00DC50A1 /* CanParkHereTests */,
+				FA415A9E2E5BA55B00DC50A1 /* CanParkHereUITests */,
+				FA415A822E5BA55800DC50A1 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		FA415A822E5BA55800DC50A1 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				FA415A812E5BA55800DC50A1 /* CanParkHere.app */,
+				FA415A912E5BA55B00DC50A1 /* CanParkHereTests.xctest */,
+				FA415A9B2E5BA55B00DC50A1 /* CanParkHereUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		FA415A832E5BA55800DC50A1 /* CanParkHere */ = {
+			isa = PBXGroup;
+			children = (
+				FAE899FA2E5BAA7B000025EC /* Utilities */,
+				FAE899E82E5BA937000025EC /* Views */,
+				FAE899E12E5BA8D7000025EC /* ViewModels */,
+				FAE899D62E5BA81F000025EC /* Services */,
+				FAE899CF2E5BA7AD000025EC /* Models */,
+				FA415A842E5BA55800DC50A1 /* CanParkHereApp.swift */,
+				FA415A882E5BA55B00DC50A1 /* Assets.xcassets */,
+				FA415A8A2E5BA55B00DC50A1 /* Preview Content */,
+			);
+			path = CanParkHere;
+			sourceTree = "<group>";
+		};
+		FA415A8A2E5BA55B00DC50A1 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				FA415A8B2E5BA55B00DC50A1 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		FA415A942E5BA55B00DC50A1 /* CanParkHereTests */ = {
+			isa = PBXGroup;
+			children = (
+				FA415A952E5BA55B00DC50A1 /* CanParkHereTests.swift */,
+			);
+			path = CanParkHereTests;
+			sourceTree = "<group>";
+		};
+		FA415A9E2E5BA55B00DC50A1 /* CanParkHereUITests */ = {
+			isa = PBXGroup;
+			children = (
+				FA415A9F2E5BA55B00DC50A1 /* CanParkHereUITests.swift */,
+				FA415AA12E5BA55B00DC50A1 /* CanParkHereUITestsLaunchTests.swift */,
+			);
+			path = CanParkHereUITests;
+			sourceTree = "<group>";
+		};
+		FAE899CF2E5BA7AD000025EC /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				FAE899D02E5BA7C8000025EC /* ParkingDecision.swift */,
+				FAE899D42E5BA808000025EC /* UserPreferences.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		FAE899D62E5BA81F000025EC /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				FAE89A072E5BB998000025EC /* Agents */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		FAE899E12E5BA8D7000025EC /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				FAE899E22E5BA8EA000025EC /* CameraViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		FAE899E82E5BA937000025EC /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				FAE899F72E5BAA07000025EC /* Settings */,
+				FAE899F42E5BA9C4000025EC /* History */,
+				FAE899F12E5BA9A8000025EC /* Results */,
+				FAE899EE2E5BA97E000025EC /* Camera */,
+				FAE899EB2E5BA956000025EC /* Onboarding */,
+				FAE899E92E5BA942000025EC /* ContentView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		FAE899EB2E5BA956000025EC /* Onboarding */ = {
+			isa = PBXGroup;
+			children = (
+				FAE899EC2E5BA96E000025EC /* OnboardingView.swift */,
+			);
+			path = Onboarding;
+			sourceTree = "<group>";
+		};
+		FAE899EE2E5BA97E000025EC /* Camera */ = {
+			isa = PBXGroup;
+			children = (
+				FAE899EF2E5BA990000025EC /* MainCameraView.swift */,
+			);
+			path = Camera;
+			sourceTree = "<group>";
+		};
+		FAE899F12E5BA9A8000025EC /* Results */ = {
+			isa = PBXGroup;
+			children = (
+				FAE899F22E5BA9B8000025EC /* ParkingResultView.swift */,
+			);
+			path = Results;
+			sourceTree = "<group>";
+		};
+		FAE899F42E5BA9C4000025EC /* History */ = {
+			isa = PBXGroup;
+			children = (
+				FAE899F52E5BA9D2000025EC /* HistoryView.swift */,
+			);
+			path = History;
+			sourceTree = "<group>";
+		};
+		FAE899F72E5BAA07000025EC /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				FAE899F82E5BAA12000025EC /* SettingsView.swift */,
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
+		FAE899FA2E5BAA7B000025EC /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				FAE899FB2E5BAA87000025EC /* ImagePicker.swift */,
+				FAE899FD2E5BAA98000025EC /* LocationManager.swift */,
+				FAE899FF2E5BAAA8000025EC /* HolidayChecker.swift */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
+		FAE89A072E5BB998000025EC /* Agents */ = {
+			isa = PBXGroup;
+			children = (
+				FAE89A0A2E5BB9C0000025EC /* Instructions */,
+				FAE89A092E5BB9B8000025EC /* Implementations */,
+				FAE89A082E5BB9A9000025EC /* Protocols */,
+			);
+			path = Agents;
+			sourceTree = "<group>";
+		};
+		FAE89A082E5BB9A9000025EC /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				FAE89A0B2E5BB9C9000025EC /* Agent.swift */,
+				FAE89A0D2E5BB9D4000025EC /* ParkingAgent.swift */,
+				FAE89A0F2E5BB9DC000025EC /* VisionAgent.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
+		FAE89A092E5BB9B8000025EC /* Implementations */ = {
+			isa = PBXGroup;
+			children = (
+				FAE89A112E5BB9E5000025EC /* AppleParkingAgent.swift */,
+				FAE89A132E5BB9EE000025EC /* AppleVisionAgent.swift */,
+			);
+			path = Implementations;
+			sourceTree = "<group>";
+		};
+		FAE89A0A2E5BB9C0000025EC /* Instructions */ = {
+			isa = PBXGroup;
+			children = (
+				FAE89A152E5BBAC2000025EC /* ParkingAgentInstructions.swift */,
+				FAE89A172E5BBACC000025EC /* VisionAgentInstructions.swift */,
+			);
+			path = Instructions;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		FA415A802E5BA55800DC50A1 /* CanParkHere */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FA415AA52E5BA55B00DC50A1 /* Build configuration list for PBXNativeTarget "CanParkHere" */;
+			buildPhases = (
+				FA415A7D2E5BA55800DC50A1 /* Sources */,
+				FA415A7E2E5BA55800DC50A1 /* Frameworks */,
+				FA415A7F2E5BA55800DC50A1 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = CanParkHere;
+			productName = CanParkHere;
+			productReference = FA415A812E5BA55800DC50A1 /* CanParkHere.app */;
+			productType = "com.apple.product-type.application";
+		};
+		FA415A902E5BA55B00DC50A1 /* CanParkHereTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FA415AA82E5BA55B00DC50A1 /* Build configuration list for PBXNativeTarget "CanParkHereTests" */;
+			buildPhases = (
+				FA415A8D2E5BA55B00DC50A1 /* Sources */,
+				FA415A8E2E5BA55B00DC50A1 /* Frameworks */,
+				FA415A8F2E5BA55B00DC50A1 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				FA415A932E5BA55B00DC50A1 /* PBXTargetDependency */,
+			);
+			name = CanParkHereTests;
+			productName = CanParkHereTests;
+			productReference = FA415A912E5BA55B00DC50A1 /* CanParkHereTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		FA415A9A2E5BA55B00DC50A1 /* CanParkHereUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FA415AAB2E5BA55B00DC50A1 /* Build configuration list for PBXNativeTarget "CanParkHereUITests" */;
+			buildPhases = (
+				FA415A972E5BA55B00DC50A1 /* Sources */,
+				FA415A982E5BA55B00DC50A1 /* Frameworks */,
+				FA415A992E5BA55B00DC50A1 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				FA415A9D2E5BA55B00DC50A1 /* PBXTargetDependency */,
+			);
+			name = CanParkHereUITests;
+			productName = CanParkHereUITests;
+			productReference = FA415A9B2E5BA55B00DC50A1 /* CanParkHereUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		FA415A792E5BA55800DC50A1 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1540;
+				LastUpgradeCheck = 1540;
+				TargetAttributes = {
+					FA415A802E5BA55800DC50A1 = {
+						CreatedOnToolsVersion = 15.4;
+					};
+					FA415A902E5BA55B00DC50A1 = {
+						CreatedOnToolsVersion = 15.4;
+						TestTargetID = FA415A802E5BA55800DC50A1;
+					};
+					FA415A9A2E5BA55B00DC50A1 = {
+						CreatedOnToolsVersion = 15.4;
+						TestTargetID = FA415A802E5BA55800DC50A1;
+					};
+				};
+			};
+			buildConfigurationList = FA415A7C2E5BA55800DC50A1 /* Build configuration list for PBXProject "CanParkHere" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = FA415A782E5BA55800DC50A1;
+			productRefGroup = FA415A822E5BA55800DC50A1 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				FA415A802E5BA55800DC50A1 /* CanParkHere */,
+				FA415A902E5BA55B00DC50A1 /* CanParkHereTests */,
+				FA415A9A2E5BA55B00DC50A1 /* CanParkHereUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		FA415A7F2E5BA55800DC50A1 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FA415A8C2E5BA55B00DC50A1 /* Preview Assets.xcassets in Resources */,
+				FA415A892E5BA55B00DC50A1 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FA415A8F2E5BA55B00DC50A1 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FA415A992E5BA55B00DC50A1 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FAE89A1A2E5BC2BC000025EC /* README.md in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		FA415A7D2E5BA55800DC50A1 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FAE89A182E5BBACC000025EC /* VisionAgentInstructions.swift in Sources */,
+				FAE89A0E2E5BB9D4000025EC /* ParkingAgent.swift in Sources */,
+				FAE899D52E5BA808000025EC /* UserPreferences.swift in Sources */,
+				FAE899F02E5BA990000025EC /* MainCameraView.swift in Sources */,
+				FAE899FE2E5BAA98000025EC /* LocationManager.swift in Sources */,
+				FAE899F62E5BA9D2000025EC /* HistoryView.swift in Sources */,
+				FAE899F32E5BA9B8000025EC /* ParkingResultView.swift in Sources */,
+				FAE899ED2E5BA96E000025EC /* OnboardingView.swift in Sources */,
+				FAE899F92E5BAA12000025EC /* SettingsView.swift in Sources */,
+				FAE89A142E5BB9EE000025EC /* AppleVisionAgent.swift in Sources */,
+				FAE899E32E5BA8EA000025EC /* CameraViewModel.swift in Sources */,
+				FAE89A102E5BB9DC000025EC /* VisionAgent.swift in Sources */,
+				FAE899EA2E5BA942000025EC /* ContentView.swift in Sources */,
+				FAE899FC2E5BAA87000025EC /* ImagePicker.swift in Sources */,
+				FAE89A0C2E5BB9C9000025EC /* Agent.swift in Sources */,
+				FA415A852E5BA55800DC50A1 /* CanParkHereApp.swift in Sources */,
+				FAE89A122E5BB9E5000025EC /* AppleParkingAgent.swift in Sources */,
+				FAE899D12E5BA7C8000025EC /* ParkingDecision.swift in Sources */,
+				FAE89A002E5BAAA8000025EC /* HolidayChecker.swift in Sources */,
+				FAE89A162E5BBAC2000025EC /* ParkingAgentInstructions.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FA415A8D2E5BA55B00DC50A1 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FA415A962E5BA55B00DC50A1 /* CanParkHereTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FA415A972E5BA55B00DC50A1 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FA415AA02E5BA55B00DC50A1 /* CanParkHereUITests.swift in Sources */,
+				FA415AA22E5BA55B00DC50A1 /* CanParkHereUITestsLaunchTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		FA415A932E5BA55B00DC50A1 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = FA415A802E5BA55800DC50A1 /* CanParkHere */;
+			targetProxy = FA415A922E5BA55B00DC50A1 /* PBXContainerItemProxy */;
+		};
+		FA415A9D2E5BA55B00DC50A1 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = FA415A802E5BA55800DC50A1 /* CanParkHere */;
+			targetProxy = FA415A9C2E5BA55B00DC50A1 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		FA415AA32E5BA55B00DC50A1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		FA415AA42E5BA55B00DC50A1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		FA415AA62E5BA55B00DC50A1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"CanParkHere/Preview Content\"";
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.example.CanParkHere;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		FA415AA72E5BA55B00DC50A1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"CanParkHere/Preview Content\"";
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.example.CanParkHere;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		FA415AA92E5BA55B00DC50A1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.example.CanParkHereTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CanParkHere.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/CanParkHere";
+			};
+			name = Debug;
+		};
+		FA415AAA2E5BA55B00DC50A1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.example.CanParkHereTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CanParkHere.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/CanParkHere";
+			};
+			name = Release;
+		};
+		FA415AAC2E5BA55B00DC50A1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.example.CanParkHereUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = CanParkHere;
+			};
+			name = Debug;
+		};
+		FA415AAD2E5BA55B00DC50A1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.example.CanParkHereUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = CanParkHere;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		FA415A7C2E5BA55800DC50A1 /* Build configuration list for PBXProject "CanParkHere" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FA415AA32E5BA55B00DC50A1 /* Debug */,
+				FA415AA42E5BA55B00DC50A1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FA415AA52E5BA55B00DC50A1 /* Build configuration list for PBXNativeTarget "CanParkHere" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FA415AA62E5BA55B00DC50A1 /* Debug */,
+				FA415AA72E5BA55B00DC50A1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FA415AA82E5BA55B00DC50A1 /* Build configuration list for PBXNativeTarget "CanParkHereTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FA415AA92E5BA55B00DC50A1 /* Debug */,
+				FA415AAA2E5BA55B00DC50A1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FA415AAB2E5BA55B00DC50A1 /* Build configuration list for PBXNativeTarget "CanParkHereUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FA415AAC2E5BA55B00DC50A1 /* Debug */,
+				FA415AAD2E5BA55B00DC50A1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = FA415A792E5BA55800DC50A1 /* Project object */;
+}
