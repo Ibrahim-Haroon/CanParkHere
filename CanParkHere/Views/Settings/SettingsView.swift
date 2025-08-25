@@ -10,8 +10,8 @@ import SwiftUI
 struct SettingsView: View {
     @EnvironmentObject var userPreferences: UserPreferences
     @Environment(\.dismiss) var dismiss
-    @State private var selectedVisionAgent: VisionAgentType = .apple
-    @State private var selectedParkingAgent: ParkingAgentType = .apple
+    @State private var showingAPIKeyAlert = false
+    @State private var tempAPIKey = ""
     
     var body: some View {
         NavigationView {
@@ -42,15 +42,41 @@ struct SettingsView: View {
                 
                 // AI Providers
                 Section("AI Providers") {
-                    Picker("Vision Agent", selection: $selectedVisionAgent) {
+                    Picker("Vision Agent", selection: $userPreferences.selectedVisionAgent) {
                         ForEach(VisionAgentType.allCases, id: \.self) { provider in
                             Text(provider.rawValue).tag(provider)
                         }
                     }
                     
-                    Picker("Parking Agent", selection: $selectedParkingAgent) {
+                    Picker("Parking Agent", selection: $userPreferences.selectedParkingAgent) {
                         ForEach(ParkingAgentType.allCases, id: \.self) { agent in
                             Text(agent.rawValue).tag(agent)
+                        }
+                    }
+                    
+                    // OpenAI API Key Section
+                    if userPreferences.selectedVisionAgent == .openai || userPreferences.selectedParkingAgent == .openai {
+                        VStack(alignment: .leading, spacing: 4) {
+                            HStack {
+                                Text("OpenAI API Key")
+                                Spacer()
+                                if userPreferences.openAIAPIKey != nil {
+                                    Image(systemName: "checkmark.circle.fill")
+                                        .foregroundColor(.green)
+                                        .font(.caption)
+                                } else {
+                                    Image(systemName: "exclamationmark.triangle.fill")
+                                        .foregroundColor(.orange)
+                                        .font(.caption)
+                                }
+                            }
+                            
+                            Button(userPreferences.openAIAPIKey != nil ? "Update API Key" : "Add API Key") {
+                                tempAPIKey = userPreferences.openAIAPIKey ?? ""
+                                showingAPIKeyAlert = true
+                            }
+                            .font(.caption)
+                            .foregroundColor(.blue)
                         }
                     }
                 }
@@ -96,6 +122,15 @@ struct SettingsView: View {
                 ToolbarItem(placement: .navigationBarTrailing) {
                     Button("Done") { dismiss() }
                 }
+            }
+            .alert("OpenAI API Key", isPresented: $showingAPIKeyAlert) {
+                TextField("Enter your OpenAI API Key", text: $tempAPIKey)
+                Button("Cancel", role: .cancel) { }
+                Button("Save") {
+                    userPreferences.openAIAPIKey = tempAPIKey.isEmpty ? nil : tempAPIKey
+                }
+            } message: {
+                Text("Enter your OpenAI API key to enable OpenAI features. Your key is stored securely on your device.")
             }
         }
     }
