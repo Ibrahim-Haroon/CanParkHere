@@ -13,6 +13,9 @@
 		FA415A962E5BA55B00DC50A1 /* CanParkHereTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA415A952E5BA55B00DC50A1 /* CanParkHereTests.swift */; };
 		FA415AA02E5BA55B00DC50A1 /* CanParkHereUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA415A9F2E5BA55B00DC50A1 /* CanParkHereUITests.swift */; };
 		FA415AA22E5BA55B00DC50A1 /* CanParkHereUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA415AA12E5BA55B00DC50A1 /* CanParkHereUITestsLaunchTests.swift */; };
+		FA6B96D02E5BEFE200CCE004 /* OpenAIParkingAgent.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6B96CF2E5BEFD600CCE004 /* OpenAIParkingAgent.swift */; };
+		FA6B96D22E5BEFEC00CCE004 /* OpenAIVisionAgent.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6B96D12E5BEFE600CCE004 /* OpenAIVisionAgent.swift */; };
+		FA6B96D42E5BF88300CCE004 /* VisionOCR.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6B96D32E5BF85B00CCE004 /* VisionOCR.swift */; };
 		FAE899D12E5BA7C8000025EC /* ParkingDecision.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE899D02E5BA7C8000025EC /* ParkingDecision.swift */; };
 		FAE899D52E5BA808000025EC /* UserPreferences.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE899D42E5BA808000025EC /* UserPreferences.swift */; };
 		FAE899E32E5BA8EA000025EC /* CameraViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE899E22E5BA8EA000025EC /* CameraViewModel.swift */; };
@@ -62,6 +65,9 @@
 		FA415A9B2E5BA55B00DC50A1 /* CanParkHereUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CanParkHereUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		FA415A9F2E5BA55B00DC50A1 /* CanParkHereUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CanParkHereUITests.swift; sourceTree = "<group>"; };
 		FA415AA12E5BA55B00DC50A1 /* CanParkHereUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CanParkHereUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		FA6B96CF2E5BEFD600CCE004 /* OpenAIParkingAgent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenAIParkingAgent.swift; sourceTree = "<group>"; };
+		FA6B96D12E5BEFE600CCE004 /* OpenAIVisionAgent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenAIVisionAgent.swift; sourceTree = "<group>"; };
+		FA6B96D32E5BF85B00CCE004 /* VisionOCR.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisionOCR.swift; sourceTree = "<group>"; };
 		FAE899D02E5BA7C8000025EC /* ParkingDecision.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParkingDecision.swift; sourceTree = "<group>"; };
 		FAE899D42E5BA808000025EC /* UserPreferences.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserPreferences.swift; sourceTree = "<group>"; };
 		FAE899E22E5BA8EA000025EC /* CameraViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraViewModel.swift; sourceTree = "<group>"; };
@@ -173,6 +179,7 @@
 		FAE899CF2E5BA7AD000025EC /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				FA6B96D32E5BF85B00CCE004 /* VisionOCR.swift */,
 				FAE899D02E5BA7C8000025EC /* ParkingDecision.swift */,
 				FAE899D42E5BA808000025EC /* UserPreferences.swift */,
 			);
@@ -281,6 +288,8 @@
 		FAE89A092E5BB9B8000025EC /* Implementations */ = {
 			isa = PBXGroup;
 			children = (
+				FA6B96D12E5BEFE600CCE004 /* OpenAIVisionAgent.swift */,
+				FA6B96CF2E5BEFD600CCE004 /* OpenAIParkingAgent.swift */,
 				FAE89A112E5BB9E5000025EC /* AppleParkingAgent.swift */,
 				FAE89A132E5BB9EE000025EC /* AppleVisionAgent.swift */,
 			);
@@ -427,12 +436,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FA6B96D02E5BEFE200CCE004 /* OpenAIParkingAgent.swift in Sources */,
 				FAE89A182E5BBACC000025EC /* VisionAgentInstructions.swift in Sources */,
 				FAE89A0E2E5BB9D4000025EC /* ParkingAgent.swift in Sources */,
+				FA6B96D22E5BEFEC00CCE004 /* OpenAIVisionAgent.swift in Sources */,
 				FAE899D52E5BA808000025EC /* UserPreferences.swift in Sources */,
 				FAE899F02E5BA990000025EC /* MainCameraView.swift in Sources */,
 				FAE899FE2E5BAA98000025EC /* LocationManager.swift in Sources */,
 				FAE899F62E5BA9D2000025EC /* HistoryView.swift in Sources */,
+				FA6B96D42E5BF88300CCE004 /* VisionOCR.swift in Sources */,
 				FAE899F32E5BA9B8000025EC /* ParkingResultView.swift in Sources */,
 				FAE899ED2E5BA96E000025EC /* OnboardingView.swift in Sources */,
 				FAE899F92E5BAA12000025EC /* SettingsView.swift in Sources */,
@@ -610,8 +622,11 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"CanParkHere/Preview Content\"";
+				DEVELOPMENT_TEAM = G288AQPYG2;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_LSApplicationCategoryType = "";
+				INFOPLIST_KEY_NSCameraUsageDescription = "This app needs camera access to capture photos of parking spots and signs.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -638,8 +653,11 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"CanParkHere/Preview Content\"";
+				DEVELOPMENT_TEAM = G288AQPYG2;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_LSApplicationCategoryType = "";
+				INFOPLIST_KEY_NSCameraUsageDescription = "This app needs camera access to capture photos of parking spots and signs.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
