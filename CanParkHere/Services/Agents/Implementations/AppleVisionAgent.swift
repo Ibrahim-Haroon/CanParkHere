@@ -36,7 +36,10 @@ class AppleVisionAgent: VisionAgent {
                 if recognizedText.isEmpty {
                     continuation.resume(throwing: VisionAgentError.noTextFound)
                 } else {
-                    continuation.resume(returning: recognizedText)
+                    continuation.resume(returning: VisionOCR(
+                        signText: finalText,
+                        confidence: Confidence.high
+                    ))
                 }
             }
             
@@ -53,21 +56,3 @@ class AppleVisionAgent: VisionAgent {
         }
     }
 }
-
-enum VisionAgentError: LocalizedError {
-    case invalidImage
-    case noTextFound
-    case processingFailed
-    
-    var errorDescription: String? {
-        switch self {
-        case .invalidImage:
-            return "Invalid image format"
-        case .noTextFound:
-            return "No text found in image"
-        case .processingFailed:
-            return "Failed to process image"
-        }
-    }
-}
-
