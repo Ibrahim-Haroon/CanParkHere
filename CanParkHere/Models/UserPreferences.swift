@@ -41,6 +41,28 @@ class UserPreferences: ObservableObject {
     
     @Published var parkingHistory: [ParkingHistoryItem] = []
     
+    @Published var selectedVisionAgent: VisionAgentType {
+        didSet {
+            UserDefaults.standard.set(selectedVisionAgent.rawValue, forKey: "selectedVisionAgent")
+        }
+    }
+    
+    @Published var selectedParkingAgent: ParkingAgentType {
+        didSet {
+            UserDefaults.standard.set(selectedParkingAgent.rawValue, forKey: "selectedParkingAgent")
+        }
+    }
+    
+    @Published var openAIAPIKey: String? {
+        didSet {
+            if let key = openAIAPIKey {
+                UserDefaults.standard.set(key, forKey: "openAIAPIKey")
+            } else {
+                UserDefaults.standard.removeObject(forKey: "openAIAPIKey")
+            }
+        }
+    }
+    
     enum LocationPreference: String, Codable {
         case precise = "precise"
         case approximate = "approximate"
@@ -66,6 +88,23 @@ class UserPreferences: ObservableObject {
         
         self.city = UserDefaults.standard.string(forKey: "city")
         self.state = UserDefaults.standard.string(forKey: "state")
+        
+        // Initialize AI provider preferences
+        if let selectedVisionAgentString = UserDefaults.standard.string(forKey: "selectedVisionAgent"),
+           let selectedVisionAgent = VisionAgentType(rawValue: selectedVisionAgentString) {
+            self.selectedVisionAgent = selectedVisionAgent
+        } else {
+            self.selectedVisionAgent = .apple
+        }
+        
+        if let selectedParkingAgentString = UserDefaults.standard.string(forKey: "selectedParkingAgent"),
+           let selectedParkingAgent = ParkingAgentType(rawValue: selectedParkingAgentString) {
+            self.selectedParkingAgent = selectedParkingAgent
+        } else {
+            self.selectedParkingAgent = .apple
+        }
+        
+        self.openAIAPIKey = UserDefaults.standard.string(forKey: "openAIAPIKey")
         
         loadParkingHistory()
     }
