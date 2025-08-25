@@ -7,11 +7,7 @@
 
 import Foundation
 
-enum VisionAgentInstructions {
-    static func role() -> String {
-        "You are the best OCR + parser for U.S. parking signs"
-    }
-    
+enum VisionAgentInstructions {    
     static func prompt() -> String {
         """
         Extract EXACT on-sign wording and directional/temporal cues from one or more images and convert them into:
