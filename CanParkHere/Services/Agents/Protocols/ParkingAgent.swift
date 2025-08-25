@@ -13,11 +13,14 @@ protocol ParkingAgent: Agent where Context == (signText: String, parkingContext:
 
 enum ParkingAgentType: String, CaseIterable {
     case apple = "Apple"
+    case openai = "OpenAI"
     
-    func createAgent() -> any ParkingAgent {
+    func createAgent() throws -> any ParkingAgent {
         switch self {
         case .apple:
             return AppleParkingAgent()
+        case .openai:
+            return try OpenAIParkingAgent()
         }
     }
 }
@@ -38,4 +41,3 @@ enum ParkingAgentError: LocalizedError {
         }
     }
 }
-
