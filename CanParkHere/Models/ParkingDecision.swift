@@ -9,7 +9,7 @@ import Foundation
 
 struct ParkingDecision: Codable {
     let canPark: Bool
-    let duration: TimeInterval?
+    let duration: Int?
     let restrictions: [String]
     let reason: String?
     let validUntil: Date?
