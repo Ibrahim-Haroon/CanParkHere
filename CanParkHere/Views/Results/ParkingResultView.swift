@@ -182,15 +182,6 @@ struct DetailedResultView: View {
                     )
                 }
                 
-                // Cost
-                if let cost = decision.cost {
-                    InfoCard(
-                        icon: "dollarsign.circle.fill",
-                        title: "Cost",
-                        value: cost
-                    )
-                }
-                
                 // Restrictions
                 if !decision.restrictions.isEmpty {
                     VStack(alignment: .leading, spacing: 12) {
