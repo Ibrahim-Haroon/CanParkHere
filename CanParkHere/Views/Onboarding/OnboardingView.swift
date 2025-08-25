@@ -44,7 +44,7 @@ struct WelcomeView: View {
                 .foregroundStyle(.blue.gradient)
             
             VStack(spacing: 12) {
-                Text("Welcome to ParkSmart")
+                Text("Welcome to CanParkHere")
                     .font(.largeTitle)
                     .fontWeight(.bold)
                 
