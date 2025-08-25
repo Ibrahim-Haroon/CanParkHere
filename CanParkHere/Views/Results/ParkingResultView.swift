@@ -169,7 +169,7 @@ struct DetailedResultView: View {
                     InfoCard(
                         icon: "clock.fill",
                         title: "Time Limit",
-                        value: formatDuration(duration)
+                        value: "\(duration) minutes"
                     )
                 }
                 
@@ -220,17 +220,6 @@ struct DetailedResultView: View {
                 }
             }
             .padding()
-        }
-    }
-    
-    func formatDuration(_ seconds: TimeInterval) -> String {
-        let hours = Int(seconds) / 3600
-        let minutes = (Int(seconds) % 3600) / 60
-        
-        if hours > 0 {
-            return "\(hours) hour\(hours > 1 ? "s" : "")"
-        } else {
-            return "\(minutes) minute\(minutes > 1 ? "s" : "")"
         }
     }
     
