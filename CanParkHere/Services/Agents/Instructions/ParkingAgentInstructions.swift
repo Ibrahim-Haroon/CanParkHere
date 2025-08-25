@@ -49,6 +49,7 @@ enum ParkingAgentInstructions {
             "restrictions": [String],
             "reason": String?,
             "valid_until": String? (ISO 8601 format, null if not applicable)
+        }
         """
     }
 }
